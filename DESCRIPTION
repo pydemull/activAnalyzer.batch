@@ -24,3 +24,8 @@ Remotes:
     pydemull/activAnalyzer
 URL: https://github.com/pydemull/activAnalyzer.batch
 BugReports: https://github.com/pydemull/activAnalyzer.batch/issues
+Suggests: 
+    covr,
+    testthat (>= 3.0.0),
+    globals,
+    assertthat
