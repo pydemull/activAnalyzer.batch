@@ -4,6 +4,10 @@
 # activAnalyzer.batch
 
 <!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![R-CMD-check](https://github.com/pydemull/activAnalyzer/workflows/R-CMD-check/badge.svg)](https://github.com/pydemull/activAnalyzer/actions)
 <!-- badges: end -->
 
 The goal of activAnalyzer.batch is to allow batch processing of
