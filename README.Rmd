@@ -1,0 +1,31 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# activAnalyzer.batch
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of activAnalyzer.batch is to allow batch processing of accelerometer data files using the functions from the activAnalyzer package.
+
+## Installation
+
+You can install the development version of activAnalyzer.batch like so:
+
+```{r, eval = FALSE}
+devtools::install_github("pydemull/activAnalyzer.batch")
+```
+
+

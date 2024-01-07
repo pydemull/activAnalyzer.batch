@@ -1,0 +1,23 @@
+Package: activAnalyzer.batch
+Title: Fast batch processing with ActiGraph .agd files
+Version: 0.0.0.9000
+Authors@R: 
+     person('Pierre-Yves', 'de Müllenheim', email = 'pydemull@uco.fr', role = c('cre', 'aut'), 
+     comment = c(ORCID = "0000-0001-9157-7371"))
+Description: The package allows the implementation of a framework to analyse several 
+    ActiGraph .agd files in a row. Functions from the activAnalyzer R package are wrapped
+    in a single function to analyse a given .agd file, and functions from the parabar R package
+    are also wrapped in a single function to easily implement parallel processing for fast analysis.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    activAnalyzer (>= 2.0.1.9000),
+    cli,
+    dplyr,
+    forcats,
+    parabar,
+    readr
+Remotes: 
+    TRUE
