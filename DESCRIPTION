@@ -19,7 +19,8 @@ Imports:
     forcats,
     parabar,
     readr
-Remotes: 
-    TRUE
+Remotes:  
+    TRUE,
+    pydemull/activAnalyzer
 URL: https://github.com/pydemull/activAnalyzer.batch
 BugReports: https://github.com/pydemull/activAnalyzer.batch/issues
