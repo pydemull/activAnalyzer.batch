@@ -1,5 +1,5 @@
 Package: activAnalyzer.batch
-Title: Fast batch processing with ActiGraph .agd files
+Title: Parallel batch processing with ActiGraph .agd files
 Version: 0.0.0.9000
 Authors@R: 
      person('Pierre-Yves', 'de Müllenheim', email = 'pydemull@uco.fr', role = c('cre', 'aut'), 
@@ -13,15 +13,12 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports: 
-    activAnalyzer (>= 2.0.1.9000),
+    activAnalyzer,
     cli,
     dplyr,
     forcats,
     parabar,
     readr
-Remotes:  
-    TRUE,
-    pydemull/activAnalyzer
 URL: https://github.com/pydemull/activAnalyzer.batch
 BugReports: https://github.com/pydemull/activAnalyzer.batch/issues
 Suggests: 
