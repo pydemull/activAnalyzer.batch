@@ -1,5 +1,6 @@
 
-#' Get a template of the file where to indicate the demographic characteristics of the participant(s) to be analysed
+#' Get a template of the file where to indicate the demographic characteristics 
+#'     of the participant(s) to be analysed
 #' 
 #' This function creates a `DEMO.csv` file in a `data` folder placed at the root
 #'     of  the current working directory. This file is a template to be filled so that 

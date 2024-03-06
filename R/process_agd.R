@@ -85,7 +85,8 @@ process_agd <- function(
   # Extract id from agd file name
   id <- as.numeric(substr(basename(agd_file), 1, id_config))
   
-  # Link the names of the variables set by the user to the global names used in the code
+  # Link the names of the variables set by the user (cf. config.csv file) to the 
+  # global names used in the code
   ID         <- config |> dplyr::filter(CODE_NAME == "ID") |> dplyr::pull(USER_VALUE)
   AGE        <- config |> dplyr::filter(CODE_NAME == "AGE") |> dplyr::pull(USER_VALUE)
   SEX        <- config |> dplyr::filter(CODE_NAME == "SEX") |> dplyr::pull(USER_VALUE)
@@ -93,10 +94,15 @@ process_agd <- function(
   SEX_FEMALE <- config |> dplyr::filter(CODE_NAME == "SEX_FEMALE") |> dplyr::pull(USER_VALUE)
   WEIGHT     <- config |> dplyr::filter(CODE_NAME == "WEIGHT") |> dplyr::pull(USER_VALUE)
 
-  # Reconfigure SEX variable
+  # Reconfigure SEX variable to ensure sex levels names can be used by the subsequent functions
   demo <- 
     demo |> 
-    dplyr::mutate({{ SEX }} := forcats::fct_recode(demo |> dplyr::pull(SEX), "male" = SEX_MALE, "female" = SEX_FEMALE))
+    dplyr::mutate({{ SEX }} := forcats::fct_recode(
+      demo |> 
+        dplyr::pull(SEX) |> 
+        as.character(), "male" = SEX_MALE, "female" = SEX_FEMALE
+       )
+      )
   
   # Set parameters
   age    <- demo[demo[ID] == id, AGE][[1]]
@@ -158,8 +164,8 @@ process_agd <- function(
   streamFrame_older       <- config |> dplyr::filter(CODE_NAME == "STREAM_FRAME_OLDER") |> dplyr::pull(USER_VALUE) |> as.numeric()
   
   valid_wear_time_start <- config |> dplyr::filter(CODE_NAME == "VALID_WEAR_TIME_START") |> dplyr::pull(USER_VALUE)
-  valid_wear_time_end <- config |> dplyr::filter(CODE_NAME == "VALID_WEAR_TIME_END") |> dplyr::pull(USER_VALUE)
-  minimum_wear_time <- config |> dplyr::filter(CODE_NAME == "MINIMUM_WEAR_TIME") |> dplyr::pull(USER_VALUE) |> as.numeric()
+  valid_wear_time_end   <- config |> dplyr::filter(CODE_NAME == "VALID_WEAR_TIME_END") |> dplyr::pull(USER_VALUE)
+  minimum_wear_time     <- config |> dplyr::filter(CODE_NAME == "MINIMUM_WEAR_TIME") |> dplyr::pull(USER_VALUE) |> as.numeric()
   
   # Set function parameters
   
