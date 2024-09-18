@@ -2,7 +2,8 @@
 % Please edit documentation in R/get_demo_template.R
 \name{get_demo_template}
 \alias{get_demo_template}
-\title{Get a template of the file where to indicate the demographic characteristics of the participant(s) to be analysed}
+\title{Get a template of the file where to indicate the demographic characteristics
+of the participant(s) to be analysed}
 \usage{
 get_demo_template()
 }
