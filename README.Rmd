@@ -20,14 +20,73 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/pydemull/activAnalyzer.batch/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/pydemull/activAnalyzer.batch/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of activAnalyzer.batch is to allow batch processing of accelerometer data files using the functions from the activAnalyzer package.
+## General presentation
+The goal of {activAnalyzer.batch} is to allow batch processing of accelerometer data files (.agd) using the functions from the {activAnalyzer} package. The core function of the package, `process_all_agd()`, implements parallel processing to inscrease the speed of the computations.
 
 ## Installation
 
-You can install the development version of activAnalyzer.batch like so:
+The package is not published on CRAN. To install the package, you can use the following command line:
 
 ```{r, eval = FALSE}
 devtools::install_github("pydemull/activAnalyzer.batch")
 ```
+
+## Framework
+
+### Set the directory structure
+
+The working directory should have the following structure : 
+
+**project**/  
+&emsp;|_ **data**/  
+&emsp;|&emsp;|_ **agd**/   
+&emsp;|&emsp;|&emsp;|_ 001_...  
+&emsp;|&emsp;|&emsp;|_ 002_...  
+&emsp;|&emsp;|&emsp;|_ ...  
+&emsp;|&emsp;|_ DATES.csv  
+&emsp;|&emsp;|_ DEMO.csv  
+&emsp;|_ config.csv  
+        
+
+In the `data/` folder, the .agd file names must start with the same number of digits (1, 2, 3,..). There are 3 digits in the example shown above.
+
+The `DATES.csv` file should contain three columns (to ensure a correct structure of the file, the user can use the command `get_dates_template()` from the package to get a template of the file): 
+
+  * A column for the IDs of the participants (named `id` for example).
+  * A column for the date of the start of the measurement (named `start_date`).
+  * A column for the date of the end of the measurement (named `end_date`).
+
+The `DEMO.csv` file should contain at least four columns (to ensure a correct structure of the file, the user can use the command `get_demo_template()` from the package to get a template of the file):
+
+  * A column for the IDs of the participants (named `id` for example).
+  * A column for participant sex information (named `sex` for example).
+  * A column for participant age in years (named `age` for example).
+  * A column for participant weight in kg (named `weight` for example).
+
+Importantly, the columns related to the participants IDs should have the same names across the different files.
+
+The `config.csv` file should be generated using the following R command line: `get_config_file()`. Then, the user should update the values from the `USER_VALUE` column depending on their needs.
+
+## Run batch analysis
+
+To process all .agd files using a single function, run the following R commands:
+
+```{r, eval = FALSE}
+# Load package
+library(activAnalyzer.batch)
+
+# Process .agd files
+df_pam <-
+  process_all_agd(
+    agd_dir = "data/agd/",
+    config_path = "config.csv",
+    demo_path = "data/DEMO.csv",
+    dates_path = "data/DATES.csv",
+    id_config = 3,
+    content = "option_3"
+  )
+```
+
+Please read the documentation to get the details related to the function arguments.
 
 
