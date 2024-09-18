@@ -94,5 +94,5 @@ df_pam <-
   )
 ```
 
-Please read the documentation to get the details related to the function
-arguments.
+Please read the package documentation to get the details related to the
+function arguments.
