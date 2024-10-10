@@ -19,16 +19,16 @@ MPA_CUTPOINT_PRESCHOOLER;3908;"For VM/Hip (Butte et al., 2014); Original cut-poi
 MPA_CUTPOINT_CHILD;3420;"For VM/Hip (Hänggi et al., 2013); Original cut-point: 56 counts/s; Based on Migueles et al. (2017; DOI: 10.1007/s40279-017-0716-0)"
 MPA_CUTPOINT_ADOLESCENT;3028;"For VM/Hip (Romanzini et al., 2014); Original cut-point: 756 counts/15s; Based on Migueles et al. (2017; DOI: 10.1007/s40279-017-0716-0)"
 MPA_CUTPOINT_ADULT;2690;"For VM/Hip (Sasaki et al.; 2011); Original cut-point: 2690 counts/min; Based on Migueles et al. (2017; DOI: 10.1007/s40279-017-0716-0)"
-MPA_CUTPOINT_OLDER;2690;"For VM/Hip (Sasaki et al.; 2011); Original cut-point: 2690 counts/min; Based on Migueles et al. (2017; DOI: 10.1007/s40279-017-0716-0)"
+MPA_CUTPOINT_OLDER;2690;"For VM/Hip (Sasaki et al.; 2011); Original cut-point: 2690 counts/min; Arbitrary choice"
 VPA_CUTPOINT_PRESCHOOLER;6112;"For VM/Hip (Butte et al., 2014); Original cut-point: 6112 counts/min; Based on Migueles et al. (2017; DOI: 10.1007/s40279-017-0716-0)"
 VPA_CUTPOINT_CHILD;Inf;"No VPA cut-point from Hänggi et al. (2013); Based on Migueles et al. (2017; DOI: 10.1007/s40279-017-0716-0)"
 VPA_CUTPOINT_ADOLESCENT;4448;"For VM/Hip (Romanzini et al., 2014); Original cut-point: 1112 counts/15s; Based on Migueles et al. (2017; DOI: 10.1007/s40279-017-0716-0)"
 VPA_CUTPOINT_ADULT;6167;"For VM/Hip (Sasaki et al., 2011); Based on Migueles et al. (2017; DOI: 10.1007/s40279-017-0716-0)"
-VPA_CUTPOINT_OLDER;6167;"For VM/Hip (Sasaki et al., 2011); Based on Migueles et al. (2017; DOI: 10.1007/s40279-017-0716-0)"
+VPA_CUTPOINT_OLDER;6167;"For VM/Hip (Sasaki et al.; 2011); Original cut-point: 2690 counts/min; Arbitrary choice"
 EQUATION_EE_PRESCHOOLER;Santos-Lozano et al. (2013) [Adults];Arbitrary choice (not appropriate but constrained by activAnalyzer package)
 EQUATION_EE_CHILD;Santos-Lozano et al. (2013) [Adults];Arbitrary choice (not appropriate but constrained by activAnalyzer package)
 EQUATION_EE_ADOLESCENT;Santos-Lozano et al. (2013) [Adults];Arbitrary choice (not appropriate but constrained by activAnalyzer package)
-EQUATION_EE_ADULT;Santos-Lozano et al. (2013) [Adults];Arbitrary choice (not appropriate but constrained by activAnalyzer package)
+EQUATION_EE_ADULT;Santos-Lozano et al. (2013) [Adults];Arbitrary choice (not necessarily the most appropriate but partly constrained by activAnalyzer package)
 EQUATION_EE_OLDER;Santos-Lozano et al. (2013) [Older adults];"Based on Migueles et al. (2017; DOI: 10.1007/s40279-017-0716-0)"
 EPOCH_TARGET_PRESCHOOLER;15;"Based on Migueles et al. (2017; DOI: 10.1007/s40279-017-0716-0) and Ahmadi et al. (2022; DOI: 10.1371/journal.pone.0266970)"
 EPOCH_TARGET_CHILD;15;"Based on Migueles et al. (2017; DOI: 10.1007/s40279-017-0716-0)"
