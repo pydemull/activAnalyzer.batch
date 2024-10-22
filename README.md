@@ -31,7 +31,7 @@ devtools::install_github("pydemull/activAnalyzer.batch")
 
 ### Set the directory structure
 
-The working directory should have the following structure :
+The working directory should have the following structure:
 
 **project**/  
  \|\_ **data**/  
