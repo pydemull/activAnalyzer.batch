@@ -338,7 +338,7 @@ process_agd <- function(
     
   }
   
-  # Get final datasets 
+  # Get final datasets and plots
   
   ## data_with_intensity_marks
   data_with_intensity_marks <- 
@@ -347,10 +347,13 @@ process_agd <- function(
     dplyr::select(id, dplyr::everything())
   
   ## results_by_day
-  results_by_day <- 
+  results_by_day_stats <- 
     results_by_day$df_all_metrics |> 
     dplyr::mutate(id = id) |> 
     dplyr::select(id, dplyr::everything())
+  
+  ## Log-log plots
+  p_log <- results_by_day$p_log
   
   ## all metrics
   all_metrics <- cbind(data.frame(id = id), main_metrics, accum_metrics_sed)
@@ -364,7 +367,8 @@ process_agd <- function(
     list_results <- 
       list(
         all_metrics = all_metrics, 
-        results_by_day = results_by_day
+        results_by_day = results_by_day_stats,
+        p_log = p_log
       )
   }
   
@@ -372,7 +376,8 @@ process_agd <- function(
     list_results <- 
       list(
         all_metrics = all_metrics, 
-        results_by_day = results_by_day,
+        results_by_day = results_by_day_stats,
+        p_log = p_log,
         data_with_intensity_marks = data_with_intensity_marks
       )
   }

@@ -149,10 +149,12 @@ if (content == "option_1") {all_metrics <- results |> dplyr::bind_rows()}
 if (content == "option_2") {
   all_metrics <- lapply(results, "[[", "all_metrics") |> dplyr::bind_rows()
   results_by_day <- lapply(results, "[[", "results_by_day") |> dplyr::bind_rows()
+  p_log <- lapply(results, "[[", "p_log")
   }
 if (content == "option_3") {
   all_metrics <- lapply(results, "[[", "all_metrics") |> dplyr::bind_rows()
   results_by_day <- lapply(results, "[[", "results_by_day") |> dplyr::bind_rows()
+  p_log <- lapply(results, "[[", "p_log")
   data_with_intensity_marks <- lapply(results, "[[", "data_with_intensity_marks") |> dplyr::bind_rows()
 }
 
@@ -165,7 +167,8 @@ if (content == "option_2") {
   list_results <- 
     list(
       all_metrics = all_metrics, 
-      results_by_day = results_by_day
+      results_by_day = results_by_day,
+      p_log = p_log
     )
 }
 
@@ -174,6 +177,7 @@ if (content == "option_3") {
     list(
       all_metrics = all_metrics, 
       results_by_day = results_by_day,
+      p_log = p_log,
       data_with_intensity_marks = data_with_intensity_marks
     )
 }
