@@ -110,11 +110,11 @@ process_agd <- function(
   sex    <- as.character(demo[demo[ID] == id, SEX][[1]])
   weight <- demo[demo[ID] == id, WEIGHT][[1]]
   
-  ehcv_preschooler <- config |> dplyr::filter(CODE_NAME == "EHCV_PRESCHOOLER") |> dplyr::pull(USER_VALUE) |> as.numeric()
-  ehcv_child <- config |> dplyr::filter(CODE_NAME == "EHCV_CHILD") |> dplyr::pull(USER_VALUE) |> as.numeric()
-  ehcv_adolescent <- config |> dplyr::filter(CODE_NAME == "EHCV_ADOLESCENT") |> dplyr::pull(USER_VALUE) |> as.numeric()
-  ehcv_adult <- config |> dplyr::filter(CODE_NAME == "EHCV_ADULT") |> dplyr::pull(USER_VALUE) |> as.numeric()
-  ehcv_older <- config |> dplyr::filter(CODE_NAME == "EHCV_OLDER") |> dplyr::pull(USER_VALUE) |> as.numeric()
+  ehcv_preschooler <- config |> dplyr::filter(CODE_NAME == "EHCV_PRESCHOOLER") |> dplyr::pull(USER_VALUE)
+  ehcv_child <- config |> dplyr::filter(CODE_NAME == "EHCV_CHILD") |> dplyr::pull(USER_VALUE)
+  ehcv_adolescent <- config |> dplyr::filter(CODE_NAME == "EHCV_ADOLESCENT") |> dplyr::pull(USER_VALUE)
+  ehcv_adult <- config |> dplyr::filter(CODE_NAME == "EHCV_ADULT") |> dplyr::pull(USER_VALUE)
+  ehcv_older <- config |> dplyr::filter(CODE_NAME == "EHCV_OLDER") |> dplyr::pull(USER_VALUE)
   
   axis_preschooler <- config |> dplyr::filter(CODE_NAME == "AXIS_PRESCHOOLER") |> dplyr::pull(USER_VALUE)
   axis_child       <- config |> dplyr::filter(CODE_NAME == "AXIS_CHILD") |> dplyr::pull(USER_VALUE)
@@ -189,6 +189,7 @@ process_agd <- function(
       if (age >= 13 && age < 18)  {ehcv <- ehcv_adolescent}
       if (age >= 18 && age < 65)  {ehcv <- ehcv_adult}
       if (age >= 65)              {ehcv <- ehcv_older}
+      if (ehcv != "none")         {ehcv <- as.numeric(ehcv)}
   
       # SED cut-point
      if (age < 6)                {sed_cutpoint <- sed_cutpoint_preschooler}
