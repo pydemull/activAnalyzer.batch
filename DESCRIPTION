@@ -13,7 +13,7 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports: 
-    activAnalyzer,
+    activAnalyzer (>= 2.1.2.9000),
     cli,
     dplyr,
     forcats,
@@ -26,3 +26,5 @@ Suggests:
     testthat (>= 3.0.0),
     globals,
     assertthat
+Remotes:  
+    pydemull/activAnalyzer

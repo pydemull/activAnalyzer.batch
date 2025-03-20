@@ -68,7 +68,8 @@
 #' agd_file = FILE_PATH, 
 #' config = CONFIG, 
 #' demo = DEMO, 
-#' dates = DATES, id_config = 3
+#' dates = DATES, 
+#' id_config = 3
 #' )
 process_agd <- function(
     agd_file, 
