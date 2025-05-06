@@ -1,9 +1,7 @@
 Package: activAnalyzer.batch
 Title: Parallel batch processing with ActiGraph .agd files
 Version: 0.0.0.9000
-Authors@R: 
-     person('Pierre-Yves', 'de Müllenheim', email = 'pydemull@uco.fr', role = c('cre', 'aut'), 
-     comment = c(ORCID = "0000-0001-9157-7371"))
+Authors@R: person('Pierre-Yves', 'de Müllenheim', email = 'pydemull@uco.fr', role = c('cre', 'aut'), comment = c(ORCID = "0000-0001-9157-7371"))
 Description: The package allows the implementation of a framework to analyse several 
     ActiGraph .agd files in a row. Functions from the activAnalyzer R package are wrapped
     in a single function to analyse a given .agd file, and functions from the parabar R package
